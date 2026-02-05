@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anandraj - AI Product Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 5% 3rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text .role {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-secondary {
+            background: #1a1a1a;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-tertiary {
+            background: white;
+            color: #1a1a1a;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-tertiary:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .hero-tags {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+        }
+
+        .tag-1 {
+            top: 10%;
+            left: -10%;
+        }
+
+        .tag-2 {
+            top: 40%;
+            right: -10%;
+        }
+
+        .tag-3 {
+            bottom: 10%;
+            left: -5%;
+        }
+
+        .tag-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .tag-value {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 3rem;
+            color: #999;
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .skill-percentage {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 2rem;
+            border-radius: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow-x: auto;
+        }
+
+        .code-comment {
+            color: #64748b;
+        }
+
+        .code-keyword {
+            color: #c792ea;
+        }
+
+        .code-function {
+            color: #82aaff;
+        }
+
+        .code-string {
+            color: #c3e88d;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            padding-left: 120px;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 28px;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px #667eea;
+        }
+
+        .timeline-icon img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .timeline-header {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-role {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-highlights li {
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-badges {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .project-badge {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-stat {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.7rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 0.7rem;
+        }
+
+        .explore-btn {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .achievement-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+            text-align: center;
+        }
+
+        .achievement-item {
+            padding: 2rem;
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #667eea;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: #64748b;
+            text-decoration: none;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-tags {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 80px;
+            }
+
+            .timeline-icon {
+                left: 0;
+            }
+
+            .achievement-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">A</div>
+            <div>
+                <div style="font-weight: 700;">Anandraj</div>
+                <div style="font-size: 0.7rem; color: #999;">AI Product Manager</div>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+        <a href="#contact" class="contact-btn">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="subtitle">Welcome to my portfolio</p>
+                <h1>
+                    Building Worlds,<br>
+                    Leading Teams,<br>
+                    <span class="gradient-text">Delivering Dreams</span>
+                </h1>
+                <p class="role">I'm a <strong>AI Product Manager</strong></p>
+                <p class="hero-description">
+                    SSE II turned Product Management Aspirant with 14+ years of experience delivering world-class gaming experiences to millions of players across flagship Zynga titles including FarmVille, YoVille, ChefVille, Empires & Allies, FarmVille II: Country Escape, and Wizard of Oz: Magic Match.
+
+Also contributed to Azadi Quest: Match 3, an educational mobile puzzle game launched by India’s Ministry of Information & Broadcasting under the Azadi Ka Amrit Mahotsav initiative. Collaborated closely with teams in San Francisco during three on-site visits, gaining valuable exposure to global product and game development practices.
+
+Certified in Product Management & Strategy from IIM Kozhikode, and currently pursuing AI-driven Product Management and Agentic AI at IIT Patna. Bridging strong technical depth with strategic product thinking to create engaging, data-informed digital experiences.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">14+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50M+</div>
+                        <div class="stat-label">Players Reached</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Major Titles</div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Let's Connect</a>
+                    <a href="#projects" class="btn-secondary">View Projects</a>
+                    <a href="#" class="btn-tertiary">Download Resume</a>
+                </div>
+
+                <div class="hero-badges">
+                    <div class="badge">
+                        <div class="badge-icon"></div>
+                        Zynga Veteran
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon"></div>
+                        IIM Kozhikode
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon"></div>
+                        IIT-P Certified
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="assets/MyProfilePhoto_Profesional.jpeg">
+                <div class="hero-tags tag-1">
+                    <div class="tag-title">Primary Skill</div>
+                    <div class="tag-value">Product Management</div>
+                </div>
+                <div class="hero-tags tag-2">
+                    <div class="tag-title">Tech Skill</div>
+                    <div class="tag-value">Unity, C#, Android, IOS</div>
+                </div>
+                <div class="hero-tags tag-3">
+                    <div class="tag-title">Impact</div>
+                    <div class="tag-value">50M+ Players</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            Scroll to explore ↓
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="section-header">
+            <p class="section-subtitle">Core Competencies</p>
+            <h2 class="section-title">Technical Excellence Meets Strategic Vision</h2>
+            <p class="section-description">A unique blend of deep technical expertise and emerging product leadership capabilities</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Technical Leadership</span>
+                    <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Unity C#</span>
+                    <span class="skill-percentage">93%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 93%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Android & iOS</span>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Web & Windows</span>
+                    <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">C# & PHP</span>
+                    <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 88%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Python & JavaScript</span>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">SQL & ActionScript</span>
+                    <span class="skill-percentage">93%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 93%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Unity 2020</span>
+                    <span class="skill-percentage">82%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 82%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Flash & Flex</span>
+                    <span class="skill-percentage">87%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 87%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">Jira & Fisheye</span>
+                    <span class="skill-percentage">93%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 93%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-block">
+<span class="code-comment">// GameController.cs</span>
+<span class="code-comment">// Unity Game Architecture Pattern</span>
+<span class="code-keyword">public class</span> <span class="code-function">GameController</span> : MonoBehaviour
+{
+    <span class="code-keyword">private</span> GameStateManager stateManager;
+    <span class="code-keyword">private</span> PlayerController player;
+    
+    <span class="code-keyword">void</span> <span class="code-function">Start</span>()
+    {
+        <span class="code-function">InitializeGameSystems</span>();
+        <span class="code-function">LoadPlayerProgress</span>();
+        <span class="code-function">StartGameLoop</span>();
+    }
+    
+    <span class="code-keyword">private void</span> <span class="code-function">InitializeGameSystems</span>()
+    {
+        <span class="code-comment">// Cross-platform optimization</span>
+        Application.targetFrameRate = <span class="code-string">60</span>;
+        QualitySettings.vSyncCount = <span class="code-string">0</span>;
+    }
+}
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="section-header">
+            <p class="section-subtitle">Professional Journey</p>
+            <h2 class="section-title">14+ Years of Gaming Excellence</h2>
+            <p class="section-description">From technical mastery to strategic leadership - a journey of continuous growth and impact</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop" alt="Zynga logo">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-role">Senior Software Engineer II</h3>
+                        <p class="timeline-company">Zynga</p>
+                        <p class="timeline-date">February 2017 - February 2024</p>
+                    </div>
+                    <p class="timeline-description">
+                        Led end-to-end development and optimization of multi-platform games (Web, Android, iOS, Windows) for Studio-I, including FarmVille: Country Escape and Wizard of Oz: Magic Match
+                    </p>
+                    <ul class="timeline-highlights">
+                        <li>Led end-to-end development of multi-platform games (Web, Android, iOS, Windows) for Studio-I</li>
+                        <li>Spearheaded cross-border collaboration with Zynga San Francisco HQ, facilitating seamless knowledge transfer</li>
+                        <li>Managed a team of 5-8 engineers, providing technical guidance, mentorship, and ensuring timely delivery</li>
+                        <li>Designed and deployed new features, ensuring seamless integration into live environments and compliance with Google Play Store and App Store requirements</li>
+                        <li>Established code reviews, performance monitoring dashboards for optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=100&h=100&fit=crop" alt="IIM Kozhikode">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-role">Product Management Certification</h3>
+                        <p class="timeline-company">IIM Kozhikode</p>
+                        <p class="timeline-date">2024 - 2025</p>
+                    </div>
+                    <p class="timeline-description">
+                        Advanced certification in product management and strategic leadership
+                    </p>
+                    <ul class="timeline-highlights">
+                        <li>Product Strategy for Business Success!</li>
+                        <li>Product Analytics </li>
+                        <li>Agile Product Management</li>
+                        <li>Generative AI for Product Managers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=100&h=100&fit=crop" alt="IIT Patna">
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-role">Product Management with Agentic AI Certification</h3>
+                        <p class="timeline-company">IIT Patna</p>
+                        <p class="timeline-date">2025 - 2026</p>
+                    </div>
+                    <p class="timeline-description">
+                        Advanced Product Management in modern development practices
+                    </p>
+                    <ul class="timeline-highlights">
+                        <li>Business strategy and growth</li>
+                        <li>AI Fundamentals & Applications in PM</li>
+                        <li>Agentic AI & Ethical Considerations</li>
+                        <li>Build and Pictch AI-Driven Product</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="section-header">
+            <p class="section-subtitle">Featured Work</p>
+            <h2 class="section-title">Major Gaming Titles</h2>
+            <p class="section-description">Delivering engaging experiences to millions of players across multiple platforms</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop" alt="FarmVille Country Escape">
+                    <div class="project-badges">
+                        <span class="project-badge">iOS</span>
+                        <span class="project-badge">Android</span>
+                        <span class="project-badge">Web</span>
+                    </div>
+                    <div class="project-stat">30M+ Players</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">FarmVille: Country Escape</h3>
+                    <p class="project-role">Technical Lead</p>
+                    <p class="project-description">
+                        Led development of core gameplay features and cross-platform optimization for one of the most successful farming simulation games, reaching millions of players worldwide.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Cross-Platform</span>
+                    </div>
+                    <a href="#" class="project-link">View Details →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=600&h=400&fit=crop" alt="Wizard of Oz Magic Match">
+                    <div class="project-badges">
+                        <span class="project-badge">iOS</span>
+                        <span class="project-badge">Android</span>
+                    </div>
+                    <div class="project-stat">20M+ Players</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Wizard of Oz: Magic Match</h3>
+                    <p class="project-role">Senior Developer</p>
+                    <p class="project-description">
+                        Architected game mechanics and implemented engaging puzzle systems for this beloved franchise adaptation, delivering magical experiences to players globally.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Game Design</span>
+                    </div>
+                    <a href="#" class="project-link">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-btn">
+            <a href="#" class="btn-primary">Explore All Projects</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <p class="section-subtitle">Testimonials</p>
+            <h2 class="section-title">What Colleagues Say</h2>
+            <p class="section-description">Trusted by industry professionals and team members across the gaming ecosystem</p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Anandraj is an exceptional technical leader who bridges the gap between engineering and product vision seamlessly. His ability to translate complex technical concepts into actionable product strategies has been invaluable to our team."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Product Manager at Zynga</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievement-stats">
+                <div class="achievement-item">
+                    <div class="achievement-number">50+</div>
+                    <div class="achievement-label">Team Members Led</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number">100%</div>
+                    <div class="achievement-label">Project Success Rate</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number">10+</div>
+                    <div class="achievement-label">Major Titles Shipped</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <p class="cta-subtitle">Let's Build Something Amazing</p>
+            <h2 class="cta-title">Ready to Transform Your Gaming Vision into Reality?</h2>
+            <p class="cta-description">
+                Whether you're looking for a technical leader, product strategist, or senior developer with proven gaming industry expertise - let's connect and explore opportunities.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:anandraj@example.com" class="btn-white">Get In Touch</a>
+                <a href="#" class="btn-outline">Download Resume</a>
+                <a href="#projects" class="btn-outline">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="logo-icon">A</div>
+                    <span>Anandraj</span>
+                </div>
+                <p class="footer-description">
+                    Building Worlds, Leading Teams, Delivering Dreams. 14+ years of gaming excellence bridging technical mastery and strategic vision.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:anandraj@example.com">anandraj@example.com</a></li>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li>Bangalore, India</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Anandraj. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.querySelector('.skills-section');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Add active state to navigation on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.style.color = '#666';
+                    });
+                    if (navLink) {
+                        navLink.style.color = '#667eea';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

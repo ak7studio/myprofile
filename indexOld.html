@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroKart Autonomous Delivery</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for aesthetic appeal */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --primary-color: #3b82f6; /* Blue-500 */
+            --dark-bg: #1f2937; /* Gray-800 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #f3f4f6;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x600/1f2937/ffffff?text=AeroKart+Autonomous+Delivery');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            min-height: 400px;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Hero Section -->
+    <header class="hero-section flex items-center justify-center text-center">
+        <div class="p-6 md:p-10 rounded-xl bg-black/30 backdrop-blur-sm">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-2">
+                AeroKart
+            </h1>
+            <p class="text-xl md:text-3xl font-light text-blue-300">
+                Autonomous Intra-Premise Delivery
+            </p>
+            <!-- REMOVED: "Aerokart drone flying to balcony at dusk" descriptive text here -->
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Value Proposition Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10 text-white">
+                Solving the Last 100-Meter Problem
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Delays -->
+                <div class="bg-gray-800 p-6 rounded-xl card-shadow border-t-4 border-blue-500 transition hover:bg-gray-700">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Inefficiency</h3>
+                    <p class="text-gray-300">Human staff navigation through security, blocks, and elevators causes friction and significant time loss for quick commerce orders.</p>
+                </div>
+                <!-- Card 2: Friction -->
+                <div class="bg-gray-800 p-6 rounded-xl card-shadow border-t-4 border-blue-500 transition hover:bg-gray-700">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Security Risk</h3>
+                    <p class="text-gray-300">Increased foot traffic and complex entry protocols compromise the security and privacy of gated communities.</p>
+                </div>
+                <!-- Card 3: Contactless Need -->
+                <div class="bg-gray-800 p-6 rounded-xl card-shadow border-t-4 border-blue-500 transition hover:bg-gray-700">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Speed & Reliability</h3>
+                    <p class="text-gray-300">Residents demand reliable, instantaneous delivery that current logistics cannot consistently provide indoors.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="mb-16 bg-gray-900 p-8 rounded-xl">
+            <h2 class="text-3xl font-bold text-center mb-6 text-white">
+                The AeroKart Solution
+            </h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <ul class="space-y-4 text-lg text-gray-200">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">⚡</span>
+                            <div>
+                                <strong class="text-white">Instantaneous Delivery:</strong> From Hub Station to balcony/window receptor in under 5 minutes.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">🔒</span>
+                            <div>
+                                <strong class="text-white">Secure & Contactless:</strong> Autonomous flight minimizes human interaction and maintains privacy.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">🤖</span>
+                            <div>
+                                <strong class="text-white">AI-Powered Safety:</strong> Nano/Micro drones with geo-fencing and AI collision avoidance for guaranteed path safety.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3 text-2xl">🔗</span>
+                            <div>
+                                <strong class="text-white">Seamless Integration:</strong> API hooks compatible with leading quick commerce platforms (Swiggy, Zepto, BigBasket).
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                     <!-- Placeholder for Tech Diagram/Hub Image -->
+                     <img src="https://placehold.co/600x350/2563eb/ffffff?text=AeroDock+Hub+%26+Flight+Path+Diagram" alt="AeroKart Technology Diagram Placeholder" class="rounded-xl w-full h-auto object-cover card-shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Model Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">
+                Scalable Revenue Model
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Model 1: RWA Subscription -->
+                <div class="bg-gray-800 p-6 rounded-xl card-shadow border-l-4 border-emerald-500">
+                    <h3 class="text-2xl font-semibold mb-3 text-emerald-400">RWA Subscription (B2B)</h3>
+                    <p class="text-gray-300 mb-2">**Setup Fee + Monthly Service Plan**</p>
+                    <ul class="list-disc list-inside text-gray-400 ml-4">
+                        <li>Fixed recurring revenue from apartment residents' welfare associations.</li>
+                        <li>Covers maintenance, software updates, and drone fleet readiness.</li>
+                    </ul>
+                </div>
+                <!-- Model 2: Commission -->
+                <div class="bg-gray-800 p-6 rounded-xl card-shadow border-l-4 border-emerald-500">
+                    <h3 class="text-2xl font-semibold mb-3 text-emerald-400">Delivery Commission (B2B2C)</h3>
+                    <p class="text-gray-300 mb-2">**Revenue Split on Deliveries**</p>
+                    <ul class="list-disc list-inside text-gray-400 ml-4">
+                        <li>Commission percentage from quick commerce partners for every successful intra-premise drop.</li>
+                        <li>Premium "QuickLift" surcharge for express delivery requested by end customers.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traction & Call to Action -->
+        <section class="text-center p-10 bg-blue-900/50 rounded-xl">
+            <h2 class="text-3xl font-bold mb-4 text-white">
+                Next Steps: Pilot & Scale
+            </h2>
+            <p class="text-xl text-blue-200 mb-6">
+                We are actively seeking seed funding to launch commercial pilots in Bengaluru and Pune.
+            </p>
+            <div class="inline-block p-4 bg-blue-600 hover:bg-blue-700 rounded-full transition duration-300 cursor-pointer text-white font-semibold shadow-lg">
+                View Full Business Plan
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 p-6 text-center text-gray-400 border-t border-gray-700">
+        <p>&copy; 2025 AeroKart. Intra-Premise Autonomous Delivery System.</p>
+    </footer>
+
+</body>
+</html>
